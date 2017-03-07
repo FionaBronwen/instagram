@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "timelineNavigationController")
+            
+            window?.rootViewController = vc
+
+        }
+        
+        
         // Override point for customization after application launch.
         return true
     }

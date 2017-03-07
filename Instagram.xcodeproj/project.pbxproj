@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5F6257041E6F1C37002972EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6257031E6F1C37002972EA /* AppDelegate.swift */; };
-		5F6257061E6F1C37002972EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6257051E6F1C37002972EA /* ViewController.swift */; };
 		5F6257091E6F1C37002972EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6257071E6F1C37002972EA /* Main.storyboard */; };
 		5F62570B1E6F1C37002972EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F62570A1E6F1C37002972EA /* Assets.xcassets */; };
 		5F62570E1E6F1C37002972EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F62570C1E6F1C37002972EA /* LaunchScreen.storyboard */; };
 		5F6257171E6F1F52002972EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6257161E6F1F52002972EA /* LoginViewController.swift */; };
+		5F6257191E6F29B5002972EA /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6257181E6F29B5002972EA /* TimelineViewController.swift */; };
 		6F9FCDB6DC0BF8274D7A9193 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D0A306D786A1D9D798B029 /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +22,12 @@
 		595010BC22F1E13E09FF5C89 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		5F6257001E6F1C37002972EA /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6257031E6F1C37002972EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F6257051E6F1C37002972EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F6257081E6F1C37002972EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F62570A1E6F1C37002972EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F62570D1E6F1C37002972EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F62570F1E6F1C37002972EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6257161E6F1F52002972EA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5F6257181E6F29B5002972EA /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,6 @@
 			children = (
 				5F6257151E6F1F36002972EA /* View Controllers */,
 				5F6257031E6F1C37002972EA /* AppDelegate.swift */,
-				5F6257051E6F1C37002972EA /* ViewController.swift */,
 				5F6257071E6F1C37002972EA /* Main.storyboard */,
 				5F62570A1E6F1C37002972EA /* Assets.xcassets */,
 				5F62570C1E6F1C37002972EA /* LaunchScreen.storyboard */,
@@ -87,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6257161E6F1F52002972EA /* LoginViewController.swift */,
+				5F6257181E6F29B5002972EA /* TimelineViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -224,8 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6257171E6F1F52002972EA /* LoginViewController.swift in Sources */,
-				5F6257061E6F1C37002972EA /* ViewController.swift in Sources */,
 				5F6257041E6F1C37002972EA /* AppDelegate.swift in Sources */,
+				5F6257191E6F29B5002972EA /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

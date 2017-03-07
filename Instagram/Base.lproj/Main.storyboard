@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,17 +59,17 @@
                         <outlet property="signInButton" destination="C8F-2h-EDh" id="tmM-tm-bG1"/>
                         <outlet property="signUpButton" destination="FZo-Vd-XYU" id="CZj-DC-ROj"/>
                         <outlet property="usernameField" destination="gRX-DW-xKX" id="zDJ-VE-Mip"/>
-                        <segue destination="siw-iK-aEe" kind="presentation" identifier="loginSegue" id="aH4-VO-w5Z"/>
+                        <segue destination="qm9-lg-YTQ" kind="presentation" identifier="loginSegue" id="aH4-VO-w5Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="gBe-jW-IEe">
             <objects>
-                <viewController id="siw-iK-aEe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" id="siw-iK-aEe" customClass="TimelineViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y82-hG-v3P"/>
                         <viewControllerLayoutGuide type="bottom" id="5La-PZ-xCb"/>
@@ -79,10 +79,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mie-7H-74X">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KX1-IW-UTe">
+                            <connections>
+                                <action selector="onLogoutPressed:" destination="siw-iK-aEe" id="ymb-La-ady"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7q-zg-0uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="38"/>
+            <point key="canvasLocation" x="1532" y="37"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TnX-b6-iht">
+            <objects>
+                <navigationController storyboardIdentifier="timelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="qm9-lg-YTQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uaq-99-Luz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="siw-iK-aEe" kind="relationship" relationship="rootViewController" id="tH4-cX-IxG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRh-TK-r2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
