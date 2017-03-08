@@ -9,10 +9,24 @@
 import UIKit
 import Parse
 
-class TimelineViewController: UIViewController {
+class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var posts: [Post] = []
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        Post.getPosts(success: { (posts: [Post]) in
+            self.posts = posts
+            self.tableView.reloadData()
+        }) { (error: Error) in
+            print(error.localizedDescription)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +34,22 @@ class TimelineViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        let post = posts[indexPath.row]
+        cell.postImageView.image = post.postImage
+        cell.usernameLabel.text = post.author?.username
+        cell.captionLabel.text = post.caption
+        cell.likeCountLabel.text = "\((post.likesCount)!)"
+        cell.usernameLabel2.text = post.author?.username
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
     
     @IBAction func onLogoutPressed(_ sender: Any) {

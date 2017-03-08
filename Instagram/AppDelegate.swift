@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "timelineNavigationController")
+            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController")
             
             window?.rootViewController = vc
 
