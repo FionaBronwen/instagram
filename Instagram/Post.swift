@@ -15,7 +15,7 @@ class Post: NSObject {
     var caption: String?
     var commentCount: Int?
     var likesCount: Int?
-    var postImage: UIImage?
+    
     var pictureFile: PFFile?
     
     init(pfObject: PFObject) {
@@ -24,10 +24,8 @@ class Post: NSObject {
         self.commentCount = pfObject["commentCount"] as? Int
         self.likesCount = pfObject["likesCount"] as? Int
         self.pictureFile = pfObject["media"] as? PFFile
-        let postImageData = try! pictureFile?.getData()
-        if let postImageData = postImageData {
-            self.postImage = UIImage(data: postImageData)
-        }
+        
+       
     }
     
     

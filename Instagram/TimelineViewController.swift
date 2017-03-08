@@ -40,12 +40,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         let post = posts[indexPath.row]
-        cell.postImageView.image = post.postImage
         cell.usernameLabel.text = post.author?.username
         cell.captionLabel.text = post.caption
         cell.likeCountLabel.text = "\((post.likesCount)!)"
         cell.usernameLabel2.text = post.author?.username
-        
+        cell.post = post
         return cell
     }
     

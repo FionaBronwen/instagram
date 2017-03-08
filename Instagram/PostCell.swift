@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class PostCell: UITableViewCell {
     
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var replyButton: UIButton!
@@ -22,7 +24,12 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     
-    
+    var post: Post!{
+        didSet{
+            postImageView.file = post.pictureFile
+            postImageView.loadInBackground()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
