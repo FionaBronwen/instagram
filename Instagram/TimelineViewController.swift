@@ -21,6 +21,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         Post.getPosts(success: { (posts: [Post]) in
             self.posts = posts
             self.tableView.reloadData()

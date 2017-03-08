@@ -16,6 +16,7 @@
 		5F6257191E6F29B5002972EA /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6257181E6F29B5002972EA /* TimelineViewController.swift */; };
 		5F972D671E6F42BB00C4D8FE /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F972D661E6F42BB00C4D8FE /* PostCell.swift */; };
 		5F972D6A1E6F45E000C4D8FE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F972D691E6F45E000C4D8FE /* Post.swift */; };
+		5FDA8C071E6FBA81000C03AA /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA8C061E6FBA59000C03AA /* Billabong.ttf */; };
 		6F9FCDB6DC0BF8274D7A9193 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D0A306D786A1D9D798B029 /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		5F6257181E6F29B5002972EA /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		5F972D661E6F42BB00C4D8FE /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		5F972D691E6F45E000C4D8FE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5FDA8C061E6FBA59000C03AA /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				5F6257021E6F1C37002972EA /* Instagram */,
 				5F6257011E6F1C37002972EA /* Products */,
+				5FDA8C051E6FBA36000C03AA /* Resources */,
 				3E81E0D2D0CA553610E584B7 /* Pods */,
 				D214055E30B179071385A571 /* Frameworks */,
 			);
@@ -114,6 +117,15 @@
 				5F972D691E6F45E000C4D8FE /* Post.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		5FDA8C051E6FBA36000C03AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FDA8C061E6FBA59000C03AA /* Billabong.ttf */,
+			);
+			name = Resources;
+			path = Instagram;
 			sourceTree = "<group>";
 		};
 		D214055E30B179071385A571 /* Frameworks */ = {
@@ -190,6 +202,7 @@
 				5F62570E1E6F1C37002972EA /* LaunchScreen.storyboard in Resources */,
 				5F62570B1E6F1C37002972EA /* Assets.xcassets in Resources */,
 				5F6257091E6F1C37002972EA /* Main.storyboard in Resources */,
+				5FDA8C071E6FBA81000C03AA /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

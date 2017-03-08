@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }
         
+         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "billabong", size: 34)!]
+        
         
         // Override point for customization after application launch.
         return true
