@@ -13,7 +13,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var bioTextView: UITextView!
     
-    var selectedProfileImage: UIImage?
+    var editedProfileImage: UIImage?
     var bio: String?
     
     override func viewDidLoad() {
@@ -38,18 +38,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
-        selectedProfileImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        editedProfileImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        
         
         
         // Do something with the images (based on your use case)
-        profileImageView.image = selectedProfileImage
+        profileImageView.image = editedProfileImage
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onSavePressed(_ sender: Any) {
         print("sdsd`")
-        User.updateUserProfile(image: selectedProfileImage, withBio: bio) { (true, error: Error?) in
+        User.updateUserProfile(image: editedProfileImage, withBio: bio) { (true, error: Error?) in
         }
         dismiss(animated: true, completion: nil)
     }

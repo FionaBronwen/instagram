@@ -122,18 +122,12 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CGo-OS-pjY" customClass="PFImageView">
-                                                    <rect key="frame" x="8" y="0.0" width="48" height="48"/>
+                                                    <rect key="frame" x="8" y="4" width="48" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="48" id="sTJ-35-l9S"/>
                                                         <constraint firstAttribute="height" constant="48" id="vbh-iV-74q"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fionabronwen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgQ-1u-qgR">
-                                                    <rect key="frame" x="64" y="14" width="98" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-t1-xyG">
                                                     <rect key="frame" x="8" y="439" width="59" height="24"/>
                                                     <state key="normal" title="Like" image="heartLine"/>
@@ -141,10 +135,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-SO-gZz">
                                                     <rect key="frame" x="50" y="438" width="107" height="26"/>
                                                     <state key="normal" title="Comment" image="commentLine"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2d-Cj-gKz">
-                                                    <rect key="frame" x="88" y="436" width="39" height="30"/>
-                                                    <state key="normal" title="Reply"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzd-mW-DWR">
                                                     <rect key="frame" x="8" y="469" width="17" height="19"/>
@@ -176,22 +166,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fionabronwen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgQ-1u-qgR">
+                                                    <rect key="frame" x="64" y="19" width="98" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bhe-SO-gZz" firstAttribute="top" secondItem="x2w-hq-lHC" secondAttribute="bottom" constant="7" id="3KF-9h-dCL"/>
                                                 <constraint firstItem="mzd-mW-DWR" firstAttribute="top" secondItem="x2w-hq-lHC" secondAttribute="bottom" constant="38" id="5m8-01-dYW"/>
                                                 <constraint firstItem="FgQ-1u-qgR" firstAttribute="leading" secondItem="CGo-OS-pjY" secondAttribute="trailing" constant="8" id="6hG-uV-OWI"/>
                                                 <constraint firstItem="bhe-SO-gZz" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leadingMargin" constant="42" id="90S-k2-hTz"/>
-                                                <constraint firstItem="wNr-fa-auw" firstAttribute="top" secondItem="Z2d-Cj-gKz" secondAttribute="bottom" constant="22" id="96x-GB-J4y"/>
                                                 <constraint firstItem="x2w-hq-lHC" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leading" id="IMT-kr-LNU"/>
-                                                <constraint firstItem="Z2d-Cj-gKz" firstAttribute="top" secondItem="x2w-hq-lHC" secondAttribute="bottom" constant="5" id="Jkc-1D-YG6"/>
+                                                <constraint firstItem="wNr-fa-auw" firstAttribute="top" secondItem="bhe-SO-gZz" secondAttribute="bottom" constant="24" id="JVg-B3-RRO"/>
                                                 <constraint firstItem="bhe-SO-gZz" firstAttribute="leading" secondItem="8zC-t1-xyG" secondAttribute="trailing" constant="-17" id="LyV-1m-Rnu"/>
                                                 <constraint firstItem="l0k-lr-dHi" firstAttribute="top" secondItem="mzd-mW-DWR" secondAttribute="bottom" constant="1" id="QVA-hR-h8O"/>
                                                 <constraint firstItem="l0k-lr-dHi" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leading" constant="8" id="Qo2-Xw-iWo"/>
-                                                <constraint firstItem="CGo-OS-pjY" firstAttribute="top" secondItem="7J8-kz-gly" secondAttribute="top" id="Qs0-g8-E1B"/>
+                                                <constraint firstItem="CGo-OS-pjY" firstAttribute="top" secondItem="7J8-kz-gly" secondAttribute="top" constant="4" id="Qs0-g8-E1B"/>
                                                 <constraint firstItem="8zC-t1-xyG" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leading" constant="8" id="SJ8-8I-I5D"/>
                                                 <constraint firstItem="hFm-Fb-wd7" firstAttribute="top" secondItem="l0k-lr-dHi" secondAttribute="bottom" constant="1" id="a9K-7J-05N"/>
-                                                <constraint firstItem="FgQ-1u-qgR" firstAttribute="top" secondItem="7J8-kz-gly" secondAttribute="topMargin" constant="6" id="aQM-NV-24U"/>
+                                                <constraint firstItem="FgQ-1u-qgR" firstAttribute="top" secondItem="7J8-kz-gly" secondAttribute="topMargin" constant="11" id="aQM-NV-24U"/>
                                                 <constraint firstItem="x2w-hq-lHC" firstAttribute="top" secondItem="7J8-kz-gly" secondAttribute="top" constant="56" id="ct4-tQ-bJE"/>
                                                 <constraint firstItem="mzd-mW-DWR" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leadingMargin" id="dMK-XR-pSQ"/>
                                                 <constraint firstItem="bhe-SO-gZz" firstAttribute="top" secondItem="x2w-hq-lHC" secondAttribute="bottom" constant="7" id="eqy-tJ-Axc"/>
@@ -202,7 +197,6 @@
                                                 <constraint firstItem="hFm-Fb-wd7" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leading" constant="8" id="rxs-0N-bR2"/>
                                                 <constraint firstItem="EWF-0x-e0w" firstAttribute="leading" secondItem="mzd-mW-DWR" secondAttribute="trailing" constant="4" id="s16-vu-aIL"/>
                                                 <constraint firstItem="8zC-t1-xyG" firstAttribute="top" secondItem="x2w-hq-lHC" secondAttribute="bottom" constant="8" id="xrp-3P-U6a"/>
-                                                <constraint firstItem="Z2d-Cj-gKz" firstAttribute="leading" secondItem="7J8-kz-gly" secondAttribute="leading" constant="88" id="yd2-IC-MpQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="x2w-hq-lHC" secondAttribute="trailing" id="yjr-nP-7lq"/>
                                                 <constraint firstItem="wNr-fa-auw" firstAttribute="leading" secondItem="l0k-lr-dHi" secondAttribute="trailing" constant="8" id="zwV-TX-m4p"/>
                                             </constraints>
@@ -214,7 +208,6 @@
                                             <outlet property="likeCountLabel" destination="mzd-mW-DWR" id="bVI-Z6-FoO"/>
                                             <outlet property="postImageView" destination="x2w-hq-lHC" id="ksK-zR-HYw"/>
                                             <outlet property="profileImageView" destination="CGo-OS-pjY" id="tFv-SW-Tk0"/>
-                                            <outlet property="replyButton" destination="Z2d-Cj-gKz" id="n4b-dN-0xZ"/>
                                             <outlet property="timestampLabel" destination="hFm-Fb-wd7" id="N9Z-c1-ggz"/>
                                             <outlet property="usernameLabel" destination="FgQ-1u-qgR" id="Hfc-gK-hmU"/>
                                             <outlet property="usernameLabel2" destination="l0k-lr-dHi" id="vWr-Fs-ZwE"/>

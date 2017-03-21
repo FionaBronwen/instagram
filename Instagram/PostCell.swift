@@ -18,7 +18,6 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var usernameLabel2: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
@@ -32,6 +31,9 @@ class PostCell: UITableViewCell {
             let user = post.author
             if let profileImageFile = user?.object(forKey: "profilePhotoFile") {
                 profileImageView.file = profileImageFile as? PFFile
+                profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+                
+                profileImageView.clipsToBounds = true
                 profileImageView.loadInBackground()
             }
             

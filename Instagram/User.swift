@@ -31,6 +31,7 @@ class User: NSObject {
     class func updateUserProfile(image: UIImage?, withBio bio: String?, withCompletion completion: PFBooleanResultBlock?) {
         
         let user = PFUser.current()
+        let image = UIImage.resize(image: image!, newSize: CGSize(width: 200, height: 200))
         
         user?["profilePhotoFile"] = getPFFileFromImage(image: image) // PFFile column type
         user?["bio"] = bio

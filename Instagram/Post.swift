@@ -31,6 +31,8 @@ class Post: NSObject {
         // Create Parse object PFObject
         let post = PFObject(className: "Post")
         
+        let image = UIImage.resize(image: image!, newSize: CGSize(width: 612, height: 612))
+        
         // Add relevant fields to the object
         post["media"] = getPFFileFromImage(image: image) // PFFile column type
         post["author"] = PFUser.current() // Pointer column type that points to PFUser
@@ -78,6 +80,7 @@ class Post: NSObject {
         }
         return posts
     }
+    
     
 
 }
