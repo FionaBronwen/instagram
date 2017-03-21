@@ -24,8 +24,6 @@ class Post: NSObject {
         self.commentCount = pfObject["commentCount"] as? Int
         self.likesCount = pfObject["likesCount"] as? Int
         self.pictureFile = pfObject["media"] as? PFFile
-        
-       
     }
     
     

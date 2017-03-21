@@ -13,7 +13,7 @@ import ParseUI
 class PostCell: UITableViewCell {
     
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var likeButton: UIButton!
@@ -28,6 +28,13 @@ class PostCell: UITableViewCell {
         didSet{
             postImageView.file = post.pictureFile
             postImageView.loadInBackground()
+            
+            let user = post.author
+            if let profileImageFile = user?.object(forKey: "profilePhotoFile") {
+                profileImageView.file = profileImageFile as? PFFile
+                profileImageView.loadInBackground()
+            }
+            
         }
     }
     
