@@ -23,9 +23,14 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editImage()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if postImageView.image == nil {
+            editImage()
+        }
     }
     
     func editImage() {
@@ -51,14 +56,26 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func onShare(_ sender: Any) {
         Post.postUserImage(image: editedImage, withCaption: captionField.text) { (success: Bool, error: Error?) in
+            MBProgressHUD.showAdded(to: self.view, animated: true)
             if success {
+                self.captionField.text = ""
+                self.postImageView.image = nil
+                MBProgressHUD.hide(for: self.view, animated: true)
                 self.delegate?.postSubmitted()
+            }else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                print(error?.localizedDescription ?? 0)
             }
         }
         tabBarController?.selectedIndex = 0
 
     }
     
+    @IBAction func onCancel(_ sender: Any) {
+        self.captionField.text = ""
+        self.postImageView.image = nil
+        tabBarController?.selectedIndex = 0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

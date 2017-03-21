@@ -24,8 +24,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let user = PFUser.current()
         
         profileImageView.file = user?.object(forKey: "profilePhotoFile") as? PFFile
+        profileImageView.load { (image: UIImage?, error: Error?) in
+            self.editedProfileImage = image
+        }
         profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         profileImageView.clipsToBounds = true
+        bio = user?.object(forKey: "bio") as? String
+        self.bioTextView.text = bio
         
 
         // Do any additional setup after loading the view.

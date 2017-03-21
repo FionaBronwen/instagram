@@ -114,7 +114,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-hq-lHC" customClass="PFImageView">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-hq-lHC" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="56" width="375" height="375"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="375" id="PzK-yh-85i"/>
@@ -307,6 +307,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="nKI-gt-UZq">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kWb-dD-LVi">
+                            <connections>
+                                <action selector="onCancel:" destination="WF4-6n-bxh" id="ymq-Ho-ELn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="dnS-jW-Pej">
                             <connections>
                                 <action selector="onShare:" destination="WF4-6n-bxh" id="kSg-QZ-llw"/>
@@ -367,7 +372,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="565" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-kC-PSS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="565" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-kC-PSS">
                                 <rect key="frame" x="141" y="72" width="31" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -415,7 +420,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-3a-i0B">
-                                <rect key="frame" x="0.0" y="270" width="375" height="397"/>
+                                <rect key="frame" x="0.0" y="270" width="375" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="VjZ-Q2-Olc">
                                     <size key="itemSize" width="124" height="124"/>
@@ -431,7 +436,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-yr-WDi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-yr-WDi" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -470,7 +475,7 @@
                             <constraint firstItem="0Zg-rr-wXA" firstAttribute="top" secondItem="wcj-uk-aSY" secondAttribute="bottom" constant="28" id="jjO-VP-amp"/>
                             <constraint firstItem="3Q9-bL-cXY" firstAttribute="top" secondItem="wcj-uk-aSY" secondAttribute="bottom" constant="8" id="jk2-qS-vKz"/>
                             <constraint firstItem="GV7-3a-i0B" firstAttribute="leading" secondItem="gyq-Yi-4KK" secondAttribute="leading" id="jvk-AD-kCp"/>
-                            <constraint firstAttribute="bottom" secondItem="GV7-3a-i0B" secondAttribute="bottom" id="k4p-zz-EDQ"/>
+                            <constraint firstAttribute="bottom" secondItem="GV7-3a-i0B" secondAttribute="bottom" constant="49" id="k4p-zz-EDQ"/>
                             <constraint firstItem="tpj-w2-Ktl" firstAttribute="centerX" secondItem="oTs-kC-PSS" secondAttribute="centerX" id="mVg-Nd-rxZ"/>
                             <constraint firstItem="cNy-5O-mhB" firstAttribute="leading" secondItem="gyq-Yi-4KK" secondAttribute="leading" constant="16" id="oJe-ro-S9u"/>
                             <constraint firstItem="oTs-kC-PSS" firstAttribute="top" secondItem="wcj-uk-aSY" secondAttribute="bottom" constant="8" id="oTW-Gh-kgw"/>
@@ -567,7 +572,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EYl-Yu-6Uz">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="LUl-gF-cho">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IV4-dE-1dE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IV4-dE-1dE">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
@@ -688,7 +693,7 @@
         <scene sceneID="jhO-c8-43r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8uu-vg-KEh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Y2A-2W-22N"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="Y2A-2W-22N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sEa-vM-Kbg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -725,10 +730,11 @@
     <resources>
         <image name="addLine" width="24" height="24"/>
         <image name="commentLine" width="27" height="26"/>
-        <image name="defaultUserImage" width="400" height="300"/>
+        <image name="defaultUserImage" width="800" height="600"/>
         <image name="heartLine" width="26" height="24"/>
         <image name="homeLine" width="24" height="27"/>
         <image name="instagradient" width="148" height="117"/>
         <image name="searchLine" width="23" height="23"/>
+        <image name="user" width="16" height="25"/>
     </resources>
 </document>

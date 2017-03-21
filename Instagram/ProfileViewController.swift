@@ -21,9 +21,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let user = PFUser.current()
+    var posts: [Post] = []
+    
     override func viewDidLoad() {
         
-        let user = PFUser.current()
         
         super.viewDidLoad()
         collectionView.delegate = self
@@ -40,17 +42,32 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         usernameLabel.text = user?.username
         bioLabel.text = user?.object(forKey: "bio") as! String?
+        getPosts(user: PFUser.current()!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bioLabel.text = user?.object(forKey: "bio") as! String?
 
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    func getPosts(user: PFUser) {
+        Post.getUserPosts(user: user, success: { (posts: [Post]) in
+            self.posts = posts
+            self.postsCountLabel.text = "\(self.posts.count)"
+            self.collectionView.reloadData()
+        }) { (error: Error) in
+            print(error)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCollectionViewCell", for: indexPath) as? PostCollectionViewCell
+        cell?.postImageView.file = posts[indexPath.row].pictureFile
+        cell?.postImageView.loadInBackground()
         return cell!
     }
     

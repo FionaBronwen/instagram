@@ -72,6 +72,24 @@ class Post: NSObject {
         }
     }
     
+    class func getUserPosts(user: PFUser, success: @escaping ([Post]) -> (), failure: @escaping (Error) -> ()) {
+        let query = PFQuery(className: "Post")
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.whereKey("author", equalTo: user)
+        
+        // fetch data asynchronously
+        query.findObjectsInBackground { (pfObjects: [PFObject]?, error: Error?) in
+            if let pfObjects = pfObjects {
+                let posts = formPostsArray(from: pfObjects)
+                success(posts)
+            } else {
+                print("\(error?.localizedDescription)!")
+                failure(error!)
+            }
+        }
+    }
+    
     class func formPostsArray(from pfObjectArray: [PFObject]) -> [Post]{
         var posts: [Post] = []
         for pfObject in pfObjectArray {

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import ParseUI
 
 class PostCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageView: PFImageView!
     
     
     
