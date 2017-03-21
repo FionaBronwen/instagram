@@ -75,3 +75,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     */
 
 }
+
+extension TimelineViewController: PostDelegate {
+    func postSubmitted() {
+        self.tableView.reloadData()
+    }
+}

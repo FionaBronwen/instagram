@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -17,6 +18,8 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var editedImage: UIImage?
+    var delegate: PostDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +50,10 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func onShare(_ sender: Any) {
-        Post.postUserImage(image: editedImage, withCaption: captionField.text) { (true, error: Error?) in
+        Post.postUserImage(image: editedImage, withCaption: captionField.text) { (success: Bool, error: Error?) in
+            if success {
+                self.delegate?.postSubmitted()
+            }
         }
         tabBarController?.selectedIndex = 0
 

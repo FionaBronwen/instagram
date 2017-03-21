@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var postsCountLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
@@ -19,11 +19,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         
-        var user = PFUser.current()
+        let user = PFUser.current()
         
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         editProfileButton.layer.cornerRadius = 4
         
         profileImageView.layer.cornerRadius = 48
@@ -32,10 +37,26 @@ class ProfileViewController: UIViewController {
         let file = user?.object(forKey: "profilePhotoFile") as! PFFile
         profileImageView.file = file
         profileImageView.loadInBackground()
+        
+        usernameLabel.text = user?.username
+        bioLabel.text = user?.object(forKey: "bio") as! String?
 
         
         // Do any additional setup after loading the view.
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCollectionViewCell", for: indexPath) as? PostCollectionViewCell
+        return cell!
+    }
+    
+    
+    
+    
     @IBAction func onEditProfilePressed(_ sender: Any) {
         self.performSegue(withIdentifier: "EditProfileSegue", sender: nil)
 

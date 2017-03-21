@@ -9,4 +9,5 @@ target 'Instagram' do
 
     pod 'Parse'
     pod 'ParseUI'
+    pod 'MBProgressHUD'
 end

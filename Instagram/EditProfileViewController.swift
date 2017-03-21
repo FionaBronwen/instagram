@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var bioTextView: UITextView!
     
     var editedProfileImage: UIImage?
@@ -18,7 +20,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bio = bioTextView.text
+        
+        let user = PFUser.current()
+        
+        profileImageView.file = user?.object(forKey: "profilePhotoFile") as? PFFile
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+        profileImageView.clipsToBounds = true
         
 
         // Do any additional setup after loading the view.
@@ -49,7 +56,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     @IBAction func onSavePressed(_ sender: Any) {
-        print("sdsd`")
+        bio = bioTextView.text
         User.updateUserProfile(image: editedProfileImage, withBio: bio) { (true, error: Error?) in
         }
         dismiss(animated: true, completion: nil)
