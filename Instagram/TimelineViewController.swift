@@ -26,9 +26,12 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         
         
+        
         getPosts()
 
     }
+    
+    
     
     func getPosts() {
         Post.getPosts(success: { (posts: [Post]) in

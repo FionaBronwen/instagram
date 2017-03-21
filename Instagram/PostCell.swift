@@ -40,10 +40,18 @@ class PostCell: UITableViewCell {
         }
     }
     
+    func doubleTapped() {
+        self.likeButton.imageView?.image = UIImage(named: "heartRed")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        tap.numberOfTapsRequired = 2
+        postImageView.addGestureRecognizer(tap)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
