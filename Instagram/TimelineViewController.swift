@@ -12,24 +12,31 @@ import Parse
 class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var posts: [Post] = []
+    var refreshControl: UIRefreshControl!
     
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(getPosts), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
         tableView.delegate = self
         tableView.dataSource = self
         
-        
+        getPosts()
+
+    }
+    
+    func getPosts() {
         Post.getPosts(success: { (posts: [Post]) in
             self.posts = posts
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }) { (error: Error) in
             print(error.localizedDescription)
         }
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
