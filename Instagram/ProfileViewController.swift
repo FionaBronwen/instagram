@@ -47,7 +47,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         bioLabel.text = user?.object(forKey: "bio") as! String?
-
+        profileImageView.file = user?.object(forKey: "profilePhotoFile") as! PFFile
+        profileImageView.loadInBackground()
     }
     
     func getPosts(user: PFUser) {

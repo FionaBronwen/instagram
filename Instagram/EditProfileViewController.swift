@@ -62,9 +62,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func onSavePressed(_ sender: Any) {
         bio = bioTextView.text
-        User.updateUserProfile(image: editedProfileImage, withBio: bio) { (true, error: Error?) in
+        User.updateUserProfile(image: editedProfileImage, withBio: bio) { (success: Bool, error: Error?) in
         }
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     
